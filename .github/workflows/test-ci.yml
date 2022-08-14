@@ -1,4 +1,4 @@
-nname: Run Python Tests
+name: Run Python Tests
 on:
   push:
     branches:
