@@ -1,9 +1,7 @@
-from datetime import datetime
 from app.common.http_methods import GET, POST, PUT
-from flask import Blueprint, request
+from flask import Blueprint
 
 from .baseProxy import proxy_entity
-
 from ..controllers import SizeController
 from .base import create, update, get_by_id, get_all
 

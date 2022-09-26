@@ -1,6 +1,5 @@
-from datetime import datetime
 from app.common.http_methods import GET, POST, PUT
-from flask import Blueprint, request
+from flask import Blueprint
 
 from ..controllers import BeverageController
 from .base import create, get_all, update, get_by_id

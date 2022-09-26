@@ -1,8 +1,7 @@
-from datetime import datetime
 from app.common.http_methods import GET, POST
-from flask import Blueprint, jsonify, request
-from .baseProxy import proxy_entity
+from flask import Blueprint, jsonify
 
+from .baseProxy import proxy_entity
 from ..controllers import ReportController
 
 report = Blueprint('report', __name__)
