@@ -1,11 +1,15 @@
 from app.common.http_methods import GET, POST, PUT
 from flask import Blueprint
 
+from .baseProxy import proxy_entity
 from ..controllers import SizeController
 from .base import create, update, get_by_id, get_all
 
 size = Blueprint('size', __name__)
 
+@size.before_request
+def proxy_size():
+    proxy_entity()
 
 @size.route('/', methods=POST)
 def create_size():
