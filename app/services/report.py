@@ -1,10 +1,15 @@
+from datetime import datetime
 from app.common.http_methods import GET, POST
 from flask import Blueprint, jsonify, request
+from .baseProxy import proxy_entity
 
 from ..controllers import ReportController
 
 report = Blueprint('report', __name__)
 
+@report.before_request
+def proxy_beverage():
+    proxy_entity()
 
 @report.route('/', methods=GET)
 def get_most_required_ingredient():

@@ -1,11 +1,17 @@
+from datetime import datetime
 from app.common.http_methods import GET, POST, PUT
-from flask import Blueprint
+from flask import Blueprint, request
+
+from .baseProxy import proxy_entity
 
 from ..controllers import IngredientController
 from .base import create, update, get_by_id, get_all
 
 ingredient = Blueprint('ingredient', __name__)
 
+@ingredient.before_request
+def proxy_ingredient():
+    proxy_entity()
 
 @ingredient.route('/', methods=POST)
 def create_ingredient():
